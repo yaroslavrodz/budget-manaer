@@ -1,0 +1,18 @@
+table {
+    margin-top: 20px;
+    border: 1px solid white;
+    border-collapse: collapse;
+
+    & th, td {
+        width: 150px;
+        text-align: center;
+        border: 1px solid white;
+        border-collapse: collapse;
+        
+            & button {
+                margin: 0 !important;
+                width: 150px !important;
+                height: 50px !important;
+            } 
+    }
+}

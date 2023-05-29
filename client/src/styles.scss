@@ -1,0 +1,19 @@
+@import "./styles/button";
+@import "./styles/form";
+@import "./styles/modal";
+@import "./styles/table";
+@import "./styles/tabs";
+@import "./styles/toastr";
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #2e2e2e;
+    color: #fff;
+    width: 100%;
+}   

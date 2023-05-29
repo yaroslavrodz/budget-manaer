@@ -1,0 +1,42 @@
+<div class="container">
+    <h2>Savings</h2>
+
+    <button
+        class="create-button"
+        (click)="enableCreateMode()">
+        Create
+    </button>
+
+    <app-saving-filter
+        [types]="types"
+        (applyType)="applyType($event)">
+    </app-saving-filter>
+
+    <app-saving-list
+        [savings]="savings"
+        (savingToEdit)="enableEditMode($event)"
+        (savingToDelete)="enableDeleteMode($event)">
+    </app-saving-list>
+</div>
+
+<app-create-saving-modal
+    *ngIf="createMode"
+    [types]="types"
+    (savingToCreate)="createSaving($event)"
+    (close)="disableCreateMode()">
+</app-create-saving-modal>
+
+<app-update-saving-modal
+    *ngIf="editMode"
+    [types]="types"
+    [saving]="savingToUpdate!"
+    (savingToUpdate)="updateSaving($event)"
+    (close)="disableEditMode()">
+</app-update-saving-modal>
+
+<app-delete-saving-modal
+    *ngIf="deleteMode"
+    [saving]="savingToDelete!"
+    (savingToDeleteId)="deleteSaving($event)"
+    (close)="disableDeleteMode()">
+</app-delete-saving-modal>

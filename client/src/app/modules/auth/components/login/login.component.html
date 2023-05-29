@@ -1,0 +1,43 @@
+<form [formGroup]="loginForm" (ngSubmit)="login()">
+    <div class="input-group">
+        <label>Username: </label>
+        
+        <input
+            type="text"
+            placeholder="Username"
+            formControlName="username">
+
+        <div 
+            *ngIf="username?.invalid && username?.dirty"
+            class="error-message">
+
+            <div *ngIf="username?.errors?.['required']">Required</div>
+            <div *ngIf="username?.errors?.['pattern']">Only latin characters and numbers allowed</div>
+            <div *ngIf="username?.errors?.['minlength']">Min length equals to 4 characters</div>
+            <div *ngIf="username?.errors?.['maxlength']">Max length equals to 12 characters</div>
+        </div>
+    </div>
+
+    <div class="input-group">
+        <label>Password: </label>
+
+        <input
+            type="password"
+            placeholder="Password"
+            formControlName="password">
+
+        <div 
+            *ngIf="password?.invalid && password?.dirty"
+            class="error-message">
+
+            <div *ngIf="password?.errors?.['required']">Required</div>
+        </div>
+    </div>
+    
+    <button
+        type="submit"
+        class="light"
+        [disabled]="loginForm.invalid">
+        Login
+    </button>
+</form>

@@ -1,0 +1,41 @@
+<form (ngSubmit)="apply()">
+    <div class="input-group">
+        <label>Type: </label>
+
+        <select name="type" [(ngModel)]="filter.type">
+            <option [ngValue]="undefined">All</option>
+            <option
+                *ngFor="let type of types"
+                value="{{ type }}">
+                {{ type }}
+            </option>
+        </select>
+    </div>
+
+    <div class="input-group">
+        <label>Saving: </label>
+
+        <select name="saving" [(ngModel)]="filter.savingId">
+            <option [ngValue]="undefined">All</option>
+            <option
+                *ngFor="let saving of savings"
+                value="{{ saving.id }}">
+                {{ saving.name }}
+            </option>
+        </select>
+    </div>
+
+    <div class="input-group">
+        <label>Category: </label>
+        <select name="category" [(ngModel)]="filter.categoryId">
+            <option [ngValue]="undefined">All</option>
+            <option
+                *ngFor="let category of categories"
+                value="{{ category.id }}">
+                {{ category.name }}
+            </option>
+        </select>
+    </div>
+
+    <button type="submit">Apply</button>
+</form>

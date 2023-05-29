@@ -1,0 +1,15 @@
+h3 {
+    text-align: center;
+}
+
+.button-group {
+    width: 420px;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+
+    & button {
+        width: 200px;
+        height: 30px;
+    }
+}

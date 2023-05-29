@@ -1,0 +1,75 @@
+.mat-paginator {
+    background-color: transparent !important;
+}
+
+.mat-paginator-container{
+    width: 100% !important;
+    display: flex;
+    justify-content: space-between !important;
+    background-color: transparent;
+    border: 1px solid #fff;
+    border-top-color: transparent; 
+    color: white;
+
+    & .mat-form-field-appearance-legacy .mat-form-field-underline {
+        background-color: transparent !important;
+    }
+    
+    & .mat-select-value {
+        color: white !important;
+    }
+    
+    & .mat-select-arrow {
+        color: white !important;
+    }
+    
+    & .mat-paginator-navigation-previous {
+        filter: brightness(0) invert(1);
+    
+        &:hover {
+            background-color: transparent !important;;
+        }
+    
+        &:active {
+            background-color: transparent !important;;
+        }
+    
+        &:disabled {
+            background-color: transparent !important;
+            cursor: default;
+    
+            &:hover {
+                background-color: transparent !important;;
+            }
+    
+            &:active {
+                background-color: transparent !important;;
+            }
+        }
+    }
+    
+    & .mat-paginator-navigation-next {
+        filter: brightness(0) invert(1);
+    
+        &:hover {
+            background-color: transparent !important;;
+        }
+    
+        &:active {
+            background-color: transparent !important;;
+        }
+    
+        &:disabled {
+            background-color: transparent !important;
+            cursor: default;
+    
+            &:hover {
+                background-color: transparent !important;;
+            }
+    
+            &:active {
+                background-color: transparent !important;;
+            }
+        }
+    }
+}

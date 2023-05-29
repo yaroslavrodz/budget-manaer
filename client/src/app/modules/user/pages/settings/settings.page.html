@@ -1,0 +1,25 @@
+
+<div class="container">
+    <h2>Settings</h2>
+
+    <div class="tabs">
+        <div class="tab-links">
+            <button
+                (click)="openUpdateProfile()"
+                [class.active]="updateUserActive">
+                Update user
+            </button>
+            
+            <button
+                (click)="openUpdatePassword()"
+                [class.active]="updatePasswordActive">
+                Update Password
+            </button>
+        </div>
+        
+        <div class="tab-content">
+            <app-update-user *ngIf="updateUserActive"></app-update-user>
+            <app-update-password *ngIf="updatePasswordActive"></app-update-password>
+        </div>
+    </div>
+</div>

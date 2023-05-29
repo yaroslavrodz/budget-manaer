@@ -1,0 +1,30 @@
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Amount</th>
+        <th>Type</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </tr>
+
+    <tr *ngFor="let saving of savings">
+        <td>{{ saving.name }}</td>
+        <td>{{ saving.amount }}</td>
+        <td>{{ saving.type }}</td>
+        <td>
+            <button
+                class="dark"
+                (click)="edit(saving)">
+                Edit
+            </button>
+        </td>
+        <td>
+            <button
+                class="dark"
+                (click)="delete(saving)">
+                Delete
+            </button>
+        </td>
+    </tr>
+</table>
+

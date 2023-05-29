@@ -1,0 +1,24 @@
+<div class="container">
+    <h2>Authorization</h2>
+
+    <div class="tabs">
+        <div class="tab-links">
+            <button
+                (click)="openLogin()"
+                [class.active]="loginActive">
+                Login
+            </button>
+            
+            <button
+                (click)="openRegistration()"
+                [class.active]="registrationActive">
+                Registration
+            </button>
+        </div>
+        
+        <div class="tab-content">
+            <app-login *ngIf="loginActive"></app-login>
+            <app-registration *ngIf="registrationActive"></app-registration>
+        </div>
+    </div>
+</div>

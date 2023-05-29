@@ -1,0 +1,57 @@
+<div class="container">
+    <h2>Operations</h2>
+
+    <button
+        class="create-button"
+        (click)="enableCreateMode()">
+        Create
+    </button>
+
+    <app-operation-filter
+        [types]="types"
+        [categories]="categories"
+        [savings]="savings"
+        (applyFilter)="applyFilter($event)">
+    </app-operation-filter>
+
+    <app-operation-list
+        [operations]="operations"
+        (operationToEdit)="enableEditMode($event)"
+        (operationToDelete)="enableDeleteMode($event)">
+    </app-operation-list>
+
+    <app-paginator
+        [pageIndex]="pageIndex"
+        [length]="operationsLength"
+        [pageSize]="pageSize"
+        [pageSizeOptions]="pageSizeOptions"
+        [visiblePagesRange]="visiblePagesRange"
+        (page)="applyPage($event)">
+    </app-paginator>
+</div>
+
+<app-create-operation-modal
+    *ngIf="createMode"
+    [types]="types"
+    [categories]="categories"
+    [savings]="savings"
+    (operationToCreate)="createOperation($event)"
+    (close)="disableCreateMode()">
+</app-create-operation-modal>
+
+<app-update-operation-modal
+    *ngIf="editMode"
+    [operation]="operationToUpdate!"
+    [types]="types"
+    [categories]="categories"
+    [savings]="savings"
+    (operationToUpdate)="updateOperation($event)"
+    (close)="disableEditMode()">
+</app-update-operation-modal>
+
+<app-delete-operation-modal
+    *ngIf="deleteMode"
+    [operation]="operationToDelete!"
+    (remove)="deleteOperation($event)"
+    (close)="disableDeleteMode()">
+</app-delete-operation-modal>

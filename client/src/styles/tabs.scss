@@ -1,0 +1,41 @@
+.tabs {
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    
+    & .tab-links {
+        display: flex;
+        align-items: flex-end;
+
+        & button {
+            width: 200px;
+            height: 28px;
+            margin-bottom: -1px;
+            background-color: #333; 
+            border: {
+                width: 1px;
+                style: solid;   
+                color: transparent;
+                bottom-color: rgb(175, 175, 175);
+            } 
+            z-index: 1;
+    
+            &.active {
+                height: 32px;
+                border: {
+                    color: rgb(175, 175, 175);
+                    bottom-color: transparent;
+                }
+                font-weight: bold;
+            }
+        }
+    }
+
+    & .tab-content {
+        padding: 25px;
+        display: flex;
+        justify-content: center;
+        background-color: #333; 
+        border: 1px solid rgb(175, 175, 175);
+    }
+}

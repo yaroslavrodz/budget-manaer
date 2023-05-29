@@ -1,0 +1,35 @@
+<div class="container">
+    <h2>Categories</h2>
+
+    <button
+        class="create-button"
+        (click)="enableCreateMode()">
+        Create
+    </button>
+
+    <app-category-list
+        [categories]="categories"
+        (categoryToEdit)="enableEditMode($event)"
+        (categoryToDelete)="enableDeleteMode($event)">
+    </app-category-list>
+</div>
+
+<app-create-category-modal
+    *ngIf="createMode"
+    (categoryToCreate)="createCategory($event)"
+    (close)="disableCreateMode()">
+</app-create-category-modal>
+
+<app-update-category-modal
+    *ngIf="editMode"
+    [category]="categoryToUpdate!"
+    (categoryToUpdate)="updateCategory($event)"
+    (close)="disableEditMode()">
+</app-update-category-modal>
+
+<app-delete-category-modal
+    *ngIf="deleteMode"
+    [category]="categoryToDelete!"
+    (categoryToDeleteId)="deleteCategory($event)"
+    (close)="disableDeleteMode()">
+</app-delete-category-modal>

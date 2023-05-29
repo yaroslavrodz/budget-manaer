@@ -1,0 +1,33 @@
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Amount</th>
+        <th>Category</th>
+        <th>Saving</th>
+        <th>Date</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </tr>
+
+    <tr *ngFor="let operation of operations">
+        <td>{{ operation.name }}</td>
+        <td>{{ operation.type === 'Incoming' ? operation.amount : -operation.amount }}</td>
+        <td>{{ operation.category.name }}</td>
+        <td>{{ operation.saving.name }}</td>
+        <td>{{ operation.createdAt | date }}</td>
+        <td>
+            <button
+                class="dark"
+                (click)="update(operation)">
+                Edit
+            </button>
+        </td>
+        <td>
+            <button
+                class="dark"
+                (click)="delete(operation)">
+                Delete
+            </button>
+        </td>
+    </tr>
+</table>

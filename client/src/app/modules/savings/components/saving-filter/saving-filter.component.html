@@ -1,0 +1,16 @@
+<form (ngSubmit)="apply()">
+    <div class="input-group">
+        <label>Type: </label>
+        
+        <select name="type" [(ngModel)]="selectedType">
+            <option [ngValue]="null">All</option>
+            <option
+                *ngFor="let type of types"
+                value="{{ type }}">
+                {{ type }}
+            </option>
+        </select>
+    </div>
+
+    <button type="submit">Apply</button>
+</form>

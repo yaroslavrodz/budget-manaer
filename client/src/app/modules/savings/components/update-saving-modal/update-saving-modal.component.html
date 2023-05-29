@@ -1,0 +1,63 @@
+<div class="modal">
+    <div class="modal-content">
+        <h2>Update saving</h2>
+      
+        <form [formGroup]="form" (ngSubmit)="update()">
+            <div class="input-group">
+                <label>Name: </label>
+                
+                <input
+                    type="text"
+                    placeholder="Name"
+                    formControlName="name">
+
+                <div 
+                    *ngIf="name?.invalid && name?.dirty"
+                    class="error-message">
+
+                    <div *ngIf="name?.errors?.['required']">Required</div>
+                    <div *ngIf="name?.errors?.['pattern']">Only latin characters and numbers allowed</div>
+                    <div *ngIf="name?.errors?.['minlength']">Min length equals to 4 characters</div>
+                    <div *ngIf="name?.errors?.['maxlength']">Max length equals to 12 characters</div>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label>Amount: </label>
+
+                <input
+                    type="text"
+                    placeholder="Amount"
+                    formControlName="amount">
+
+                <div 
+                    *ngIf="amount?.invalid && amount?.dirty"
+                    class="error-message">
+
+                    <div *ngIf="amount?.errors?.['required']">Required</div>
+                    <div *ngIf="amount?. errors?.['pattern']">Only numbers allowed</div>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label>Type: </label>
+
+                <select formControlName="type">
+                    <option
+                        *ngFor="let type of types"
+                        value="{{ type }}">
+                        {{ type }}
+                    </option>
+                </select>
+            </div>
+
+            <button
+                type="submit"
+                [disabled]="form.invalid">
+                Update
+            </button>
+
+            <button (click)="cancel()">Cancel</button>
+        </form>
+    </div>
+</div>

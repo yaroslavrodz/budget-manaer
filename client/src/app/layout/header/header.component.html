@@ -1,0 +1,24 @@
+<div class="header">
+    <div class="container">
+        <h3><a routerLink="/operations">Budget Manager</a></h3>
+
+        <div *ngIf="status" class="navbar">
+            <a class="link" routerLink="/operations">Operations</a>
+            <a class="link" routerLink="/savings">Savings</a>
+            <a class="link" routerLink="/categories">Categories</a>
+        </div>
+
+
+        <div *ngIf="status" class="user-info">
+            <p class="balance">Balance: ${{ balance }}</p>
+
+            <div class="dropdown">
+                <button class="dropbtn">{{ status.user.username }} ▾</button>
+                <div class="dropdown-content">
+                    <a class="link" routerLink="/user">Settings</a>
+                    <a class="link" (click)="signout()">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
